@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Parser
 {
@@ -22,10 +23,11 @@ namespace Parser
 			while (currentline != null)
 			{
 				linecount++;
-				String[] words = currentline.Split(' ');
-				wordcount += words.Length;
+				String[] words = System.Text.RegularExpressions.Regex.Split(currentline, "( |\\t)+");//currentline.Split(' ');
 				foreach (String s in words)
 				{
+					if (System.String.IsNullOrWhiteSpace(s)) { continue; }
+					wordcount++;
 					foreach (char c in s)
 					{
 						switch (IdentifyChar(c))
@@ -38,6 +40,8 @@ namespace Parser
 								break;
 							case CharType.Types.Other:
 								othercount++;
+								break;
+							default:
 								break;
 						}
 					}
@@ -53,6 +57,7 @@ namespace Parser
 		{
 			if (System.Char.IsDigit(c)) { return CharType.Types.Number; }
 			else if (System.Char.IsLetter(c)) { return CharType.Types.Letter; }
+			else if (System.Char.IsWhiteSpace(c)) { return CharType.Types.Whitespace; }
 			else { return CharType.Types.Other; }
 		}
 	}

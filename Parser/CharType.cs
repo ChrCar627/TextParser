@@ -8,6 +8,6 @@ namespace Parser
 {
 	class CharType
 	{
-		public enum Types {Number, Letter, Other };
+		public enum Types {Number, Letter, Other, Whitespace};
 	}
 }
