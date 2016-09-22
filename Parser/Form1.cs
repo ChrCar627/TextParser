@@ -21,6 +21,7 @@ namespace Parser
 
 			timer = new System.Threading.Timer(p =>
 			{
+				//test
 				UpdateInfo();
 			});
 		}
