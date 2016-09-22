@@ -17,11 +17,10 @@ namespace Parser
 		public Parser()
 		{
 			InitializeComponent();
-			TextBox.CheckForIllegalCrossThreadCalls = false;
+			//TextBox.CheckForIllegalCrossThreadCalls = false;
 
 			timer = new System.Threading.Timer(p =>
 			{
-				//test
 				UpdateInfo();
 			});
 		}
@@ -34,6 +33,8 @@ namespace Parser
 
 		public void UpdateInfo()
 		{
+			if (InvokeRequired)	{ Invoke(new MethodInvoker(UpdateInfo)); return; }
+
 			int[] parsedinfo = Reader.Parse(textbox1.Text);
 			labelNumbersCount.Text = parsedinfo[0].ToString();
 			labelLettersCount.Text = parsedinfo[1].ToString();
