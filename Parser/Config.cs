@@ -13,16 +13,28 @@ namespace Parser
 		public static String WorkingPath;
 		public static String ErrorLogPath;
 		public static String DefaultResolution;
-		public static int DefaultWidth;
-		public static int DefaultHeight;
+		public static int DefaultWidth = 680;
+		public static int DefaultHeight = 600;
 
 		public static void LoadConfig()
 		{
 			LoadConfig(FileHandler.LoadFile().FileName);
 		}
+		/// <summary>
+		/// Load a configuration file and set parameters of the application
+		/// </summary>
+		/// <param name="filename">Path to config file that will be loaded.</param>
 		public static void LoadConfig(String filename)
 		{
-			String text = System.IO.File.ReadAllText(filename);
+			String text = "";
+			try
+			{
+				text = System.IO.File.ReadAllText(filename);
+			}
+			catch (Exception e)
+			{
+				System.Windows.MessageBox.Show("Config file not found.");
+			}
 			System.IO.StringReader reader = new System.IO.StringReader(text);
 			String currentline = reader.ReadLine();
 			while (currentline != null)
