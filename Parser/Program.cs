@@ -17,7 +17,10 @@ namespace Parser
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Parser());
+			Config.LoadConfig(Environment.CurrentDirectory + "/TestConfig.conf");
+			Parser parser = new Parser();
+			parser.Size = new System.Drawing.Size(Config.DefaultWidth, Config.DefaultHeight);
+			Application.Run(parser);
 		}
 	}
 }

@@ -70,6 +70,7 @@
 			this.textbox1.TabIndex = 0;
 			this.textbox1.TabStop = false;
 			this.textbox1.Text = "";
+			this.textbox1.WordWrap = false;
 			this.textbox1.TextChanged += new System.EventHandler(this.textbox1_TextChanged);
 			this.textbox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textbox1_KeyDown);
 			this.textbox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox1_KeyPress);

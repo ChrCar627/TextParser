@@ -23,17 +23,17 @@ namespace Parser
 				System.IO.File.WriteAllText(savefile.FileName, text);
 			}
 		}
-		public static void LoadFile(Parser parser)
+		public static OpenFileDialog LoadFile(String title = "Load File", String filter = "Text Files (*.txt,*.rtf,*.doc)|*.txt;*.rtf;*.doc|All Files (*.*)|*.*")
 		{
 			OpenFileDialog loadfile = new OpenFileDialog();
-			loadfile.Title = "Load text file";
-			loadfile.Filter = "Text Files (*.txt,*.rtf,*.doc)|*.txt;*.rtf;*.doc|All Files (*.*)|*.*";
-			if (loadfile.ShowDialog() == DialogResult.OK)
+			loadfile.Title = title;
+			loadfile.Filter = filter;
+			DialogResult result = loadfile.ShowDialog();
+			if (result == DialogResult.OK)
 			{
-
-				parser.TextboxText = System.IO.File.ReadAllText(loadfile.FileName);
-				parser.Text = loadfile.SafeFileName + "- Parser";
+				return loadfile;
 			}
+			return null;
 		}
 	}
 }

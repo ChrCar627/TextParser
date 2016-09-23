@@ -23,29 +23,43 @@ namespace Parser
 			while (currentline != null)
 			{
 				linecount++;
-				String[] words = System.Text.RegularExpressions.Regex.Split(currentline, "( |\\t)+");//currentline.Split(' ');
-				foreach (String s in words)
+
+
+				//Find all words in the current line
+
+				//Regex method:
+				//String[] words = System.Text.RegularExpressions.Regex.Split(currentline, "( |\\t)+");//currentline.Split(' ');
+
+				//Custom:
+				List<String> words = new List<String>();
+				StringBuilder currentword = new StringBuilder();
+				int charcount = 0;
+				foreach (char c in currentline)
 				{
-					if (System.String.IsNullOrWhiteSpace(s)) { continue; }
-					wordcount++;
-					foreach (char c in s)
+					charcount++;
+					switch (IdentifyChar(c))
 					{
-						switch (IdentifyChar(c))
-						{
-							case CharType.Types.Number:
-								numbercount++;
-								break;
-							case CharType.Types.Letter:
-								lettercount++;
-								break;
-							case CharType.Types.Other:
-								othercount++;
-								break;
-							default:
-								break;
-						}
+						case CharType.Types.Whitespace:
+							if (currentword.Length >= 1) { words.Add(currentword.ToString()); }
+							currentword.Remove(0, currentword.Length);
+							break;
+						case CharType.Types.Letter:
+							lettercount++;
+							goto default;
+						case CharType.Types.Number:
+							numbercount++;
+							goto default;
+						case CharType.Types.Other:
+							othercount++;
+							goto default;
+						default:
+							currentword.Append(c);
+							if(charcount == currentline.Length) { words.Add(currentword.ToString()); }
+							break;
 					}
 				}
+				wordcount += words.Count;
+				
 				currentline = stringreader.ReadLine();
 			}
 

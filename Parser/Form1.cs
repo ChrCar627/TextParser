@@ -26,7 +26,7 @@ namespace Parser
 		public void UpdateInfo()
 		{
 			if (InvokeRequired)	{ Invoke(new MethodInvoker(UpdateInfo)); return; }
-
+ 
 			int[] parsedinfo = Reader.Parse(textbox1.Text);
 			labelNumbersCount.Text = parsedinfo[0].ToString();
 			labelLettersCount.Text = parsedinfo[1].ToString();
@@ -42,7 +42,11 @@ namespace Parser
 
 		private void exitToolStripMenuItem_Click(object sender, EventArgs e) { Application.Exit(); }
 
-		private void loadToolStripMenuItem_Click(object sender, EventArgs e) { FileHandler.LoadFile(this); }
+		private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
+			OpenFileDialog loadfile = FileHandler.LoadFile();
+			TextboxText = System.IO.File.ReadAllText(loadfile.FileName);
+			Text = loadfile.SafeFileName + "- Parser";
+		}
 
 		private void saveToolStripMenuItem1_Click(object sender, EventArgs e) { FileHandler.SaveFile(textbox1.Text); }
 
