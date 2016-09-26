@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Parser
 {
@@ -36,16 +37,16 @@ namespace Parser
 		//-----------------------------------------------------------------
 		public static void LoadConfig(String filename)
 		{
-			String text = "";
+			String text = string.Empty;
 			try
 			{
 				text = System.IO.File.ReadAllText(filename);
 			}
-			catch (System.IO.FileNotFoundException)
+			catch (FileNotFoundException)
 			{
 				System.Windows.MessageBox.Show("Config file not found.");
 			}
-			System.IO.StringReader reader = new System.IO.StringReader(text);
+			StringReader reader = new StringReader(text);
 			String currentline = reader.ReadLine();
 			while (currentline != null)
 			{

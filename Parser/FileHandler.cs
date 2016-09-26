@@ -27,7 +27,7 @@ namespace Parser
 			savefile.FileName = "Untitled.txt";
 			if (savefile.ShowDialog() == DialogResult.OK)
 			{
-				System.IO.File.WriteAllText(savefile.FileName, text);
+				File.WriteAllText(savefile.FileName, text);
 			}
 		}
 
@@ -43,8 +43,7 @@ namespace Parser
 			OpenFileDialog loadfile = new OpenFileDialog();
 			loadfile.Title = title;
 			loadfile.Filter = filter;
-			DialogResult result = loadfile.ShowDialog();
-			if (result == DialogResult.OK)
+			if (loadfile.ShowDialog() == DialogResult.OK)
 			{
 				return loadfile;
 			}

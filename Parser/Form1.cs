@@ -7,25 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Parser
 {
 	public partial class Parser : Form
 	{
-		System.Threading.Timer timer;
 		public static int timescalled = 0;
 		public Parser()
 		{
 			InitializeComponent();
 			//TextBox.CheckForIllegalCrossThreadCalls = false;
-
-			timer = new System.Threading.Timer(p =>	{ UpdateInfo(); });
 		}
 		
 
 		public void UpdateInfo()
 		{
-			if (InvokeRequired)	{ Invoke(new MethodInvoker(UpdateInfo)); return; }
+			//if (InvokeRequired)	{ Invoke(new MethodInvoker(UpdateInfo)); return; }
  
 			int[] parsedinfo = Reader.Parse(textbox1.Text);
 			labelNumbersCount.Text = parsedinfo[0].ToString();
@@ -38,25 +36,43 @@ namespace Parser
 			CalledCount.Text = timescalled.ToString();
 		}
 
-		private void textbox1_TextChanged(object sender, EventArgs e) {	timer.Change(400, System.Threading.Timeout.Infinite); }
+		private void textbox1_TextChanged(object sender, EventArgs e)
+        {
+            UpdateInfo();
+        }
 
-		private void exitToolStripMenuItem_Click(object sender, EventArgs e) { Application.Exit(); }
+		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
 		private void loadToolStripMenuItem_Click(object sender, EventArgs e) {
 			OpenFileDialog loadfile = FileHandler.LoadFile();
-			TextboxText = System.IO.File.ReadAllText(loadfile.FileName);
+			TextboxText = File.ReadAllText(loadfile.FileName);
 			Text = loadfile.SafeFileName + "- Parser";
 		}
 
-		private void saveToolStripMenuItem1_Click(object sender, EventArgs e) { FileHandler.SaveFile(textbox1.Text); }
+		private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FileHandler.SaveFile(textbox1.Text);
+        }
 
 
 
 
 		//Make tab actually write a tab in the text box.
 
-		private void textbox1_KeyPress(object sender, KeyPressEventArgs e) { if(e.KeyChar == '\t') { e.Handled = true; } }
-		private void textbox1_KeyDown(object sender, KeyEventArgs e) { if (e.KeyCode == Keys.Tab) { textbox1.AppendText("\t"); } }
+		private void textbox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\t') { e.Handled = true; }
+        }
+
+		private void textbox1_KeyDown(object sender, KeyEventArgs e)
+        { if (e.KeyCode == Keys.Tab)
+            {
+                textbox1.AppendText("\t");
+            }
+        }
 
 		private void newToolStripMenuItem_Click(object sender, EventArgs e)
 		{
@@ -64,7 +80,10 @@ namespace Parser
 			this.Text = "Untitled - Parcer";
 		}
 
-		private void saveAsToolStripMenuItem_Click(object sender, EventArgs e) { FileHandler.SaveFile(textbox1.Text); }
+		private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FileHandler.SaveFile(textbox1.Text);
+        }
 
 		public String TextboxText
 		{

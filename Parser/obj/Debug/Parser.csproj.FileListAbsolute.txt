@@ -7,3 +7,33 @@ c:\users\cmcarucc\documents\visual studio 2015\Projects\Parser\Parser\obj\Debug\
 c:\users\cmcarucc\documents\visual studio 2015\Projects\Parser\Parser\obj\Debug\Parser.pdb
 c:\users\cmcarucc\documents\visual studio 2015\Projects\Parser\Parser\obj\Debug\Parser.Parser.resources
 c:\users\cmcarucc\documents\visual studio 2015\Projects\Parser\Parser\obj\Debug\Parser.csprojResolveAssemblyReference.cache
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser\Parser\bin\Debug\Parser.exe.config
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser\Parser\obj\Debug\Parser.exe
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser\Parser\obj\Debug\Parser.pdb
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser\Parser\bin\Debug\Parser.exe
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser\Parser\bin\Debug\Parser.pdb
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser\Parser\obj\Debug\Parser.csprojResolveAssemblyReference.cache
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser\Parser\obj\Debug\Parser.Parser.resources
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser\Parser\obj\Debug\Parser.Properties.Resources.resources
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser\Parser\obj\Debug\Parser.csproj.GenerateResource.Cache
+C:\Users\jrojas.UCS\Documents\Visual Studio 2015\Projects\Parser\Parser\bin\Debug\Parser.exe.config
+C:\Users\jrojas.UCS\Documents\Visual Studio 2015\Projects\Parser\Parser\obj\Debug\Parser.exe
+C:\Users\jrojas.UCS\Documents\Visual Studio 2015\Projects\Parser\Parser\obj\Debug\Parser.pdb
+C:\Users\jrojas.UCS\Documents\Visual Studio 2015\Projects\Parser\Parser\bin\Debug\Parser.exe
+C:\Users\jrojas.UCS\Documents\Visual Studio 2015\Projects\Parser\Parser\bin\Debug\Parser.pdb
+C:\Users\jrojas.UCS\Documents\Visual Studio 2015\Projects\Parser\Parser\obj\Debug\Parser.csprojResolveAssemblyReference.cache
+C:\Users\jrojas.UCS\Documents\Visual Studio 2015\Projects\Parser\Parser\obj\Debug\Parser.Parser.resources
+C:\Users\jrojas.UCS\Documents\Visual Studio 2015\Projects\Parser\Parser\obj\Debug\Parser.Properties.Resources.resources
+C:\Users\jrojas.UCS\Documents\Visual Studio 2015\Projects\Parser\Parser\obj\Debug\Parser.csproj.GenerateResource.Cache
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser_v2\Parser\bin\Debug\Parser.exe.config
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser_v2\Parser\obj\Debug\Parser.exe
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser_v2\Parser\obj\Debug\Parser.pdb
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser_v2\Parser\bin\Debug\Parser.exe
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser_v2\Parser\bin\Debug\Parser.pdb
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser_v2\Parser\obj\Debug\Parser.csprojResolveAssemblyReference.cache
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser_v2\Parser\obj\Debug\Parser.Parser.resources
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser_v2\Parser\obj\Debug\Parser.Properties.Resources.resources
+\\cntyrich-vmfs1\CNTYRICF1\VOL1\USERS\CMCARUCC\Parser_v2\Parser\obj\Debug\Parser.csproj.GenerateResource.Cache
+G:\Parser_v2\Parser\bin\Debug\Parser.exe.config
+G:\Parser_v2\Parser\obj\Debug\Parser.exe
+G:\Parser_v2\Parser\obj\Debug\Parser.pdb
