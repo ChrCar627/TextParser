@@ -9,6 +9,14 @@ namespace Parser
 {
 	class Reader
 	{
+
+		//-----------------------------------------------------------------
+		// Name: Parse()
+		// Author: Chris Carucci
+		// Date: 9-26-16
+		// Description: Parses the text passed to it
+		// Return: An array of integers containing {numbercount, lettercount, othercount, wordcount, linecount}
+		//-----------------------------------------------------------------
 		public static int[] Parse(String text)
 		{
 			int linecount = 0;
@@ -67,6 +75,14 @@ namespace Parser
 
 		}
 
+
+		//-----------------------------------------------------------------
+		// Name: IdentifyChar()
+		// Author: Chris Carucci
+		// Date: 9-26-16
+		// Description: Identifies the type of character that was passed to the function.
+		// Return: An enumeration of CharType.Types representing the character type.
+		//-----------------------------------------------------------------
 		public static CharType.Types IdentifyChar(char c)
 		{
 			if (System.Char.IsDigit(c)) { return CharType.Types.Number; }

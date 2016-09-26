@@ -10,6 +10,13 @@ namespace Parser
 {
 	class FileHandler
 	{
+
+		//-----------------------------------------------------------------
+		// Name: SaveFile()
+		// Author: Chris Carucci
+		// Date: 9-26-16
+		// Description: Saves the text in the parameter to a text file.
+		//-----------------------------------------------------------------
 		public static void SaveFile(String text)
 		{
 			SaveFileDialog savefile = new SaveFileDialog();
@@ -23,6 +30,14 @@ namespace Parser
 				System.IO.File.WriteAllText(savefile.FileName, text);
 			}
 		}
+
+		//-----------------------------------------------------------------
+		// Name: LoadFile()	
+		// Author: Chris Carucci
+		// Date: 9-26-16
+		// Description: Opens an OpenFileDialog window to load a file.
+		// Return: The OpenFileDialog that was opened. The file can then be accessed through filename
+		//-----------------------------------------------------------------
 		public static OpenFileDialog LoadFile(String title = "Load File", String filter = "Text Files (*.txt,*.rtf,*.doc)|*.txt;*.rtf;*.doc|All Files (*.*)|*.*")
 		{
 			OpenFileDialog loadfile = new OpenFileDialog();

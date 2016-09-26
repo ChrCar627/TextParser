@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace Parser
 {
+	//-----------------------------------------------------------------
+	// Name: Config
+	// Author: Chris Carucci
+	// Date: 9-26-16
+	// Description: Holds application parameters and manages configuration loading
+	//-----------------------------------------------------------------
 	class Config
 	{
 		public static int PrintResolution;
@@ -16,14 +22,18 @@ namespace Parser
 		public static int DefaultWidth = 680;
 		public static int DefaultHeight = 600;
 
+		
 		public static void LoadConfig()
 		{
 			LoadConfig(FileHandler.LoadFile().FileName);
 		}
-		/// <summary>
-		/// Load a configuration file and set parameters of the application
-		/// </summary>
-		/// <param name="filename">Path to config file that will be loaded.</param>
+
+		//-----------------------------------------------------------------
+		// Name: LoadConfig()
+		// Author: Chris Carucci
+		// Date: 9-26-16
+		// Description: Loads a configuration file and sets the application parameters
+		//-----------------------------------------------------------------
 		public static void LoadConfig(String filename)
 		{
 			String text = "";
@@ -31,7 +41,7 @@ namespace Parser
 			{
 				text = System.IO.File.ReadAllText(filename);
 			}
-			catch (Exception e)
+			catch (System.IO.FileNotFoundException)
 			{
 				System.Windows.MessageBox.Show("Config file not found.");
 			}
@@ -49,6 +59,7 @@ namespace Parser
 				String[] Splitconfig = currentline.Split('=');
 				String paramname = Splitconfig[0].Trim(' ');
 				String paramvalue = ReplaceValues(Splitconfig[1].Trim(' '));
+
 				try
 				{
 					switch (paramname)
@@ -87,14 +98,21 @@ namespace Parser
 
 		}
 
-		public static String ReplaceValues(string s)
+		//-----------------------------------------------------------------
+		// Name: ReplaceValues()
+		// Author: Chris Carucci
+		// Date: 9-26-16
+		// Description: Replaces macros from a text file with appropriate values
+		// Return: An identical string, but with the values replaces
+		//-----------------------------------------------------------------
+		public static string ReplaceValues(string s)
 		{
 			StringBuilder newstring = new StringBuilder(s);
 			newstring.Replace("@apppath", Environment.CurrentDirectory);
 			//newstring.Replace("@bestresolution","1600x900");
 			if (s.IndexOf('?') != -1)
 			{
-				String[] splitstr = newstring.ToString().Split('?');
+				string[] splitstr = newstring.ToString().Split('?');
 				if (splitstr[0].IndexOf('@') != -1) // Value was replaced
 				{
 					newstring.Clear();
